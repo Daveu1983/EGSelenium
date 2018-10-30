@@ -15,14 +15,18 @@ public class EGTest {
     @Test
     public void testNavigateJmanc() throws InterruptedException{
         WebDriver driver = new FirefoxDriver();
-        driver.get("https://mcrjava.github.io/jmanc/");
+        addressToTest(driver);
         checkTabs(driver, links);
         driver.quit();
         driver = new ChromeDriver();
-        driver.get("https://mcrjava.github.io/jmanc/");
+        addressToTest(driver);
         checkTabs(driver, links);
         driver.quit();
 
+    }
+
+    private void addressToTest(WebDriver driver) {
+        driver.get("https://mcrjava.github.io/jmanc/");
     }
 
     private void checkTabs(WebDriver driver, List<String> links) throws InterruptedException {
